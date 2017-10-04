@@ -6,10 +6,23 @@ class App extends Component {
     super (props);
     this.state = {
       friends:[
+        { "name" : "Esteban Dalel", "website" : "estebandalelr.co" }
       ],
     };
   }
-
+  componentDidMount(){
+    fetch('/agenda',{method:'GET',
+    headers:{accept:'application/json'}})
+    .then((res)=>{
+      if(res.ok)
+      return res.json();
+    })
+    .then((friends) =>{
+      this.setState({
+        friends:friends
+      });
+    })
+  }
   render() {
     return (
       <div className="App">
