@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class agenda extends Component {
+class Agenda extends Component {
   constructor(props) {
     super (props);
   }
